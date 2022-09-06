@@ -1,0 +1,29 @@
+from flask import Flask
+import sentry_sdk
+
+app = Flask(__name__)
+
+sentry_sdk.init(
+    dsn="http://2d397caad47e42708fbbb6dbe21e47bd@127.0.0.1:9000/2",
+
+    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for performance monitoring.
+    # We recommend adjusting this value in production.
+    traces_sample_rate=1.0
+)
+
+@app.route("/")
+def index():
+    return "Hello World", 200
+
+@app.route("/error")
+def error():
+    return "Error", 400
+
+@app.route("/exception")
+def division_by_zero():
+    division_by_zero = 1 / 0
+    return
+
+if __name__ == "__main__":
+    app.run(host="127.0.0.1", port=8080, debug=True)
