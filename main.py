@@ -15,14 +15,20 @@ sentry_sdk.init(
 
 @app.route("/")
 def index():
+    with configure_scope() as scope:
+        scope.transaction.name = "LoadHomePage"
     return "Hello World :)", 200
 
 @app.route("/error")
 def error():
+    with configure_scope() as scope:
+        scope.transaction.name = "LoadErrorPage"
     return "Error", 400
 
 @app.route("/exception")
 def division_by_zero():
+    with configure_scope() as scope:
+        scope.transaction.name = "ExceptionDivisionByZero"
     division_by_zero = 1 / 0
     return "Should Not Display", 200
 
