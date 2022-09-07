@@ -34,6 +34,8 @@ def division_by_zero():
 
 @app.route("/sentry-exception")
 def sentry_exception():
+    with configure_scope() as scope:
+        scope.transaction.name = "SentryExceptionDivisionByZero"
     try:
         division_by_zero = 1 / 0
     except Exception as e:
