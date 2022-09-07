@@ -23,7 +23,7 @@ def error():
 @app.route("/exception")
 def division_by_zero():
     division_by_zero = 1 / 0
-    return "Should Not Return", 200
+    return "Should Not Display", 200
 
 @app.route("/sentry-exception")
 def sentry_exception():
