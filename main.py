@@ -15,7 +15,7 @@ sentry_sdk.init(
 
 @app.route("/")
 def index():
-    return "Hello World", 200
+    return "Hello World :)", 200
 
 @app.route("/error")
 def error():
