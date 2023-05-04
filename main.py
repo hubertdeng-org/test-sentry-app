@@ -13,6 +13,7 @@ sentry_sdk.init(
     environment="production"
 )
 
+
 @app.route("/")
 def index():
     with sentry_sdk.configure_scope() as scope:
