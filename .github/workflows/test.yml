@@ -4,7 +4,7 @@ on:
     inputs:
       repo:
         required: true
-      target_ref:
+      target_rev:
         required: true
 
 jobs:
@@ -16,4 +16,4 @@ jobs:
         uses: getsentry/hackweek-changetogether@main
         with:
           repo: ${{ inputs.repo }}
-          target_ref: ${{ inputs.target_ref }}
+          target_rev: ${{ inputs.target_rev }}
