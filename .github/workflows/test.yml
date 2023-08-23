@@ -13,7 +13,7 @@ jobs:
     name: "ChangeTogether test"
     steps:
       - name: Run Action
-        uses: getsentry/hackweek-changetogether@latest
+        uses: getsentry/hackweek-changetogether@main
         with:
           repo: ${{ inputs.repo }}
           target_ref: ${{ inputs.target_ref }}
