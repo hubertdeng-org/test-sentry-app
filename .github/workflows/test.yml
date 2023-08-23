@@ -1,0 +1,19 @@
+name: Test
+on:
+  workflow_dispatch:
+    inputs:
+      repo:
+        required: true
+      target_ref:
+        required: true
+
+jobs:
+  check-file-changes:
+    runs-on: ubuntu-latest
+    name: "ChangeTogether test"
+    steps:
+      - name: Run Action
+        uses: getsentry/hackweek-changetogether@latest
+        with:
+          repo: ${{ inputs.repo }}
+          target_ref: ${{ inputs.target_ref }}
