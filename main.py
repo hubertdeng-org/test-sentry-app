@@ -4,6 +4,7 @@ import sentry_sdk
 
 # [[ChangeTogether.Start()]]
 # [[ChangeTogether.With(README.md)]]
+# hahaha
 
 app = Flask(__name__)
 
